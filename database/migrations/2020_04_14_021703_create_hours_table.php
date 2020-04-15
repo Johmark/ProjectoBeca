@@ -13,8 +13,11 @@ class CreateHoursTable extends Migration
      */
     public function up()
     {
+        //If the nigration has been previsly executed it drops the table
+        Schema::dropIfExists('hours');
+        //Creates the New table
         Schema::create('hours', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->bigInteger('HoraId');
             $table->date('Fecha');
             $table->integer('HoraEntrada');

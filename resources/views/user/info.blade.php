@@ -142,9 +142,9 @@
                 <div class="line"></div>
                 <p>
                     <label class="details">Nombre: <span>
-                            <!--{{Nombre}}--></span> </label>
+                            <!--Nombre--></span> </label>
                     <label class="details">Nombre: <span>
-                            <!--{{Apellidos}}--></span> </label>
+                            <!--Apellido--></span> </label>
                 </p>
             </div>
         </div>

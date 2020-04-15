@@ -13,8 +13,11 @@ class CreateDepartmentsTable extends Migration
      */
     public function up()
     {
+        //If the nigration has been previsly executed it drops the table
+        Schema::dropIfExists('departments');
+        //Creates the New table
         Schema::create('departments', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->bigInteger('DepartamentoId');
             $table->string('Nombre');
 

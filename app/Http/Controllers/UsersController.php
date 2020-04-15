@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Hour;
+use App\Administrator;
 use Illuminate\Http\Request;
 
-class HourController extends Controller
+class UsersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class HourController extends Controller
      */
     public function index()
     {
-        //
-        
+        //returns view
+        return view('user.index');
     }
 
     /**
@@ -25,8 +25,8 @@ class HourController extends Controller
      */
     public function create()
     {
-        //Add Views
-        return view('hours.add');
+        //
+        
     }
 
     /**
@@ -38,38 +38,42 @@ class HourController extends Controller
     public function store(Request $request)
     {
         //
+        return view('user.adduser');
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Hour  $hour
+     * @param  \App\Administrator  $administrator
      * @return \Illuminate\Http\Response
      */
-    public function show(Hour $hour)
+    public function show(Administrator $users)
     {
         //
+        return view('user.info');
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Hour  $hour
+     * @param  \App\Administrator  $administrator
      * @return \Illuminate\Http\Response
      */
-    public function edit(Hour $hour)
+    public function edit(Administrator $users)
     {
-        //
+        //User Info Views
+        return view('user.edit');
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Hour  $hour
+     * @param  \App\Administrator  $administrator
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Hour $hour)
+    public function update(Request $request, Administrator $users)
     {
         //
     }
@@ -77,10 +81,10 @@ class HourController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Hour  $hour
+     * @param  \App\Administrator  $administrator
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Hour $hour)
+    public function destroy(Administrator $users)
     {
         //
     }

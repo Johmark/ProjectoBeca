@@ -116,7 +116,7 @@
     <div class="container">
         <div class="titlebar">
             <div class="logo">
-                <a href="http://unadeca.ac.cr/home/"><img class="logoimg" src="Unadecalogo.png" alt="unadecalogo"></a>
+                <a href="http://unadeca.ac.cr/home/"><img class="logoimg" src="{{asset('storage').'/img/Unadecalogo.png'}}" alt="unadecalogo"></a>
             </div>
             <div class="title">Gestor de Horas Beca</div>
             <div class="controls">
@@ -126,15 +126,15 @@
         </div>
         <div class="main">
             <div class="menucontrols">
-                <div class="items"><a href="index.html">Inicio
+                <div class="items"><a href="{{url('user')}}">Inicio
                         <!--addhours temporal--></a></div>
-                <div class="items"><a href="addhours.html">Ingresar Horas
+                <div class="items"><a href="{{url('hours/add')}}">Ingresar Horas
                         <!--addhours temporal--></a></div>
-                <div class="items"><a href="comments.html">Comentarios
+                <div class="items"><a href="{{url('general/comments')}}">Comentarios
                         <!--Coments temporal--></a></div>
-                <div class="items"><a href="">Moodle
+                <div class="items"><a href="https://unadeca.ac.cr/moodle/">Moodle
                         <!--link to moodle--></a></div>
-                <div class="items"><a href="aboutUs.html">Acerca de Nosotros
+                <div class="items"><a href="{{url('general/aboutUs')}}">Acerca de Nosotros
                         <!--About Us temporal--></a></div>
             </div>
             <div class="panel">

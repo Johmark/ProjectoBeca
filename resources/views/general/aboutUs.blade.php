@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Open+Sans+Condensed:300&display=swap" rel="stylesheet">
-    <title>Añadir Horas | AS2</title>
+    <title>Acerca de Nosotros | AS2</title>
     <style>
         body {
             margin: 0%;
@@ -109,19 +109,6 @@
             font-size: 25px;
             font-family: 'Open Sans Condensed', sans-serif;
         }
-
-        form {
-            margin-top: 1%;
-        }
-
-        .block {
-            margin-top: 0.5%;
-        }
-
-        textarea {
-            width: 100%;
-            height: 140px;
-        }
     </style>
 </head>
 
@@ -129,7 +116,7 @@
     <div class="container">
         <div class="titlebar">
             <div class="logo">
-                <a href="http://unadeca.ac.cr/home/"><img class="logoimg" src="Unadecalogo.png" alt="unadecalogo"></a>
+                <a href="http://unadeca.ac.cr/home/"><img class="logoimg" src="{{asset('storage').'/img/Unadecalogo.png'}}" alt="unadecalogo"></a>
             </div>
             <div class="title">Gestor de Horas Beca</div>
             <div class="controls">
@@ -139,53 +126,30 @@
         </div>
         <div class="main">
             <div class="menucontrols">
-                <div class="items"><a href="index.html">Inicio
+                <div class="items"><a href="{{url('user')}}">Inicio
                         <!--addhours temporal--></a></div>
-                <div class="items"><a href="rules.html">Reglamentos
+                <div class="items"><a href="{{url('hours/add')}}">Ingresar Horas
+                        <!--addhours temporal--></a></div>
+                <div class="items"><a href="{{url('general/rules')}}">Reglamentos
                         <!--Rules temporal--></a></div>
-                <div class="items"><a href="comments.html">Comentarios
+                <div class="items"><a href="{{url('general/comments')}}">Comentarios
                         <!--Coments temporal--></a></div>
-                <div class="items"><a href="">Moodle
+                <div class="items"><a href="https://unadeca.ac.cr/moodle/">Moodle
                         <!--link to moodle--></a></div>
-                <div class="items"><a href="aboutUs.html">Acerca de Nosotros
-                        <!--About Us temporal--></a></div>
             </div>
             <div class="panel">
-                <h2>Ingresar Horas</h2>
+                <h2>Acerca de Nosostros</h2>
                 <div class="line"></div>
-                <form action="">
-                    <div class="block">
-                        <!--Hora denentrada-->
-                        <label for="inHour">Hora de Entrada</label>
-                        <input class="textInput" id="inHour" type="datetime">
-                        <!--Hora de Salida-->
-                        <label for="outHour">Hora de Salida</label>
-                        <input class="textInput" id="outHour" type="datetime">
-                    </div>
-                    <div class="block">
-                        <div class="details">
-                            Total de Horas:
-                            <!--pull from (inHour-outHour)-->
-                        </div>
-                        <div class="details">
-                            Total a Pagar:
-                            <!--pull from datbase-->
-                        </div>
-                    </div>
-                    <div class="block">
-                        <label for="date">Fecha</label>
-                        <input id="date" type="date">
-                    </div>
-                    <div class="block1">
-                        <div class="form-group">
-                            <label for="my-textarea">Observaciones</label><br>
-                            <textarea id="my-textarea" class="form-control" name="" rows="3"></textarea>
-                        </div>
-                    </div>
-                    <div>
-                        <input type="submit" name="Agregar">
-                    </div>
-                </form>
+                <p>
+                    Somos un grupo de estudiantes de Ingenieria con un intenso deseo de pasar la clase. El grupo esta compuesto por:
+                </p>
+                <ul>
+                    <li>Eysel</li>
+                    <li>Jullyus</li>
+                    <li>Brenda</li>
+                    <li>John</li>
+                </ul>
+                <p>Cool.</p>
             </div>
         </div>
     </div>

@@ -13,8 +13,11 @@ class CreateAdministratorsTable extends Migration
      */
     public function up()
     {
+        //If the nigration has been previsly executed it drops the table
+        Schema::dropIfExists('administrators');
+        //Creates the New table
         Schema::create('administrators', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->bigInteger('CodigoAdmin');
             $table->string('Nombre');
             $table->string('Contraseña');

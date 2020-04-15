@@ -13,8 +13,11 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
+        //If the nigration has been previsly executed it drops the table
+        Schema::dropIfExists('users');
+        //Creates the New table
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->bigInteger('CodigoUsuario');
             $table->string('Nombre');
             $table->string('Contraseña');

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HourController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,19 +19,26 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/*App routes*/
-Route::get('/veca', function () {
-    return view('veca.index');
+/*App routes, this routes will interact with the data base
+*this routes also use the controlles to route pages.
+*/
+
+//User Routes
+Route::get('/user', 'UsersController@index');
+Route::get('/user/info', 'UsersController@show');
+Route::get('/user/edit', 'UsersController@edit');
+Route::get('/user/adduser', 'UsersController@store');
+
+//Hours Routes
+Route::get('/hours/add', 'HourController@create');
+
+//external Views
+Route::get('/general/rules', function () {
+    return view('general.rules');
 });
-Route::get('/veca/add', function () {
-    return view('veca.add');
+Route::get('/general/comments', function () {
+    return view('general.comments');
 });
-Route::get('/veca/rules', function () {
-    return view('veca.rules');
-});
-Route::get('/veca/comments', function () {
-    return view('veca.comments');
-});
-Route::get('/veca/aboutUs', function () {
-    return view('veca.aboutUs');
+Route::get('/general/aboutUs', function () {
+    return view('general.aboutUs');
 });

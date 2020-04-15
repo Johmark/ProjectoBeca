@@ -13,8 +13,11 @@ class CreateCommentsTable extends Migration
      */
     public function up()
     {
+        //If the nigration has been previsly executed it drops the table
+        Schema::dropIfExists('comments');
+        //Creates the New table
         Schema::create('comments', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->bigInteger('CommentarioId');
             $table->date('Fecha');
             $table->string('Contenido');

@@ -13,8 +13,11 @@ class CreateFailedJobsTable extends Migration
      */
     public function up()
     {
+        //If the nigration has been previsly executed it drops the table
+        Schema::dropIfExists('failed_jobs');
+        //Creates the New table
         Schema::create('failed_jobs', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->text('connection');
             $table->text('queue');
             $table->longText('payload');

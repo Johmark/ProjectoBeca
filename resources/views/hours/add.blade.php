@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Open+Sans+Condensed:300&display=swap" rel="stylesheet">
-    <title>Main Page | AS2</title>
+    <title>Añadir Horas | AS2</title>
     <style>
         body {
             margin: 0%;
@@ -90,7 +90,7 @@
         }
 
         /*dashboard*/
-        .Dashboard {
+        .panel {
             margin-left: 0.5%;
             width: 70%;
             background: #ddd;
@@ -99,7 +99,7 @@
             height: 95%;
         }
 
-        .Dashboard h2 {
+        .panel h2 {
             font-family: 'Cormorant Garamond', serif;
             font-size: 40px;
             margin-bottom: 1%;
@@ -109,6 +109,19 @@
             font-size: 25px;
             font-family: 'Open Sans Condensed', sans-serif;
         }
+
+        form {
+            margin-top: 1%;
+        }
+
+        .block {
+            margin-top: 0.5%;
+        }
+
+        textarea {
+            width: 100%;
+            height: 140px;
+        }
     </style>
 </head>
 
@@ -116,49 +129,63 @@
     <div class="container">
         <div class="titlebar">
             <div class="logo">
-                <a href="http://unadeca.ac.cr/home/"><img class="logoimg" src="Unadecalogo.png" alt="unadecalogo"></a>
+                <a href="http://unadeca.ac.cr/home/"><img class="logoimg" src="{{asset('storage').'/img/Unadecalogo.png'}}" alt="unadecalogo"></a>
             </div>
             <div class="title">Gestor de Horas Beca</div>
             <div class="controls">
-                <a href="userinfo.html">
-                    <!--nombre de usuario-->Usuario</a> | <a href="">Logout</a>
+                <a href="">
+                    <!--username-->Usuario</a> | <a href="">Logout</a>
             </div>
         </div>
         <div class="main">
             <div class="menucontrols">
-                <div class="items"><a href="addhours.html">Ingresar Horas
+                <div class="items"><a href="{{url('user')}}">Inicio
                         <!--addhours temporal--></a></div>
-                <div class="items"><a href="rules.html">Reglamentos
+                <div class="items"><a href="{{url('general/rules')}}">Reglamentos
                         <!--Rules temporal--></a></div>
-                <div class="items"><a href="comments.html">Comentarios
+                <div class="items"><a href="{{url('general/comments')}}">Comentarios
                         <!--Coments temporal--></a></div>
                 <div class="items"><a href="https://unadeca.ac.cr/moodle/">Moodle
                         <!--link to moodle--></a></div>
-                <div class="items"><a href="aboutUs.html">Acerca de Nosotros
+                <div class="items"><a href="{{url('general/aboutUs')}}">Acerca de Nosotros
                         <!--About Us temporal--></a></div>
             </div>
-            <div class="Dashboard">
-                <div class="real">
-                    <h2>Dashboard</h2>
-                    <div class="line"></div>
-                    <div class="details">
-                        <p>
-                            Estudiante:
-                            <!--ususarios ->nombre-->Usuario Tal y Tal <br>Departamento:
-                            <!--Departamento-->Mantenimiento <br>
-                            Horas Trabajadas:
-                            <!--TotalHoras--> 425 <br> Cantidad Acumulada:
-                            <!--TatalAcumulado--> $$$$
-                        </p>
+            <div class="panel">
+                <h2>Ingresar Horas</h2>
+                <div class="line"></div>
+                <form action="" method="POST" enctype="multipart/form-data">
+                    <div class="block">
+                        <!--Hora denentrada-->
+                        <label for="inHour">{{'Hora de entrada'}} </label>
+                        <input class="textInput" id="inHour" type="datetime">
+                        <!--Hora de Salida-->
+                        <label for="outHour">{{'Hora de Salida'}}</label>
+                        <input class="textInput" id="outHour" type="datetime">
                     </div>
-                </div>
-                <div class="horarios">
-                    <h2>Horario de Trabajo</h2>
-                    <div class="line"></div>
-                    <table>
-
-                    </table>
-                </div>
+                    <div class="block">
+                        <div class="details">
+                            Total de Horas:
+                            <!--pull from (inHour-outHour)-->
+                        </div>
+                        <div class="details">
+                            Total a Pagar:
+                            <!--pull from datbase-->
+                        </div>
+                    </div>
+                    <div class="block">
+                        <label for="date">Fecha</label>
+                        <input id="date" type="date">
+                    </div>
+                    <div class="block1">
+                        <div class="form-group">
+                            <label for="my-textarea">Observaciones</label><br>
+                            <textarea id="my-textarea" class="form-control" name="" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="submit" name="Agregar">
+                    </div>
+                </form>
             </div>
         </div>
     </div>
